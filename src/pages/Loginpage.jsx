@@ -19,7 +19,7 @@ import { Layout } from '../components/Layout'
 import { useAuth } from '../contexts/AuthContext'
 import useMounted from '../hooks/useMounted'
 import {
-  getCurrentUser,
+  getCurrentUser, getCurrentUserId
 } from "../services/redux/reducers/UsersSlice";
 
 export default function Loginpage() {
@@ -76,6 +76,7 @@ export default function Loginpage() {
             login(email, password)
               .then(res => {
                 dispatch(getCurrentUser(res.user.providerData[0]));
+                dispatch(getCurrentUserId(res.user.uid));
                 handleRedirectToOrBack()
               })
               .catch(error => {

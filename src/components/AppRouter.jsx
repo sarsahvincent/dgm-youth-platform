@@ -21,7 +21,7 @@ export default function AppRouter(props) {
     <>
       <Router>
         <Switch>
-          <Route exact path='/' component={Homepage} />
+          <ProtectedRoute exact path='/' component={Homepage} />
           <ProtectedRoute exact path='/login' component={Loginpage} />
           <ProtectedRoute exact path='/register' component={Registerpage} />
           <ProtectedRoute exact path='/profile' component={Profilepage} />
@@ -51,6 +51,7 @@ function ProtectedRoute(props) {
   console.log('location state', location.state)
 
   if (
+    path === '/' ||
     path === '/login' ||
     path === '/register' ||
     path === '/forgot-password' ||

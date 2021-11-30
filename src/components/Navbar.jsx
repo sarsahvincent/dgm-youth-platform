@@ -29,7 +29,12 @@ export function Navbar() {
         mx="auto"
         spacing={4}
       >
-        <Navlink to="/" name="Firbase Authentication" size="lg" />
+        {currentUser ? (
+          <Navlink to="/profile" name="DGM YOUTH" size="lg" />
+        ) : (
+          <Navlink color="purple" to="/" name="DGM YOUTH" size="lg" />
+        )}
+
         <Spacer />
         {!currentUser && <Navlink to="/login" name="Login" />}
         {!currentUser && <Navlink to="/register" name="Register" />}
