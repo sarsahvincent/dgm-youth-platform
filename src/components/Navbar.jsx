@@ -18,6 +18,7 @@ export function Navbar() {
 
   return (
     <Box
+      background="purple"
       borderBottom="2px"
       borderBottomColor={useColorModeValue("gray.100", "gray.700")}
       mb={4}
@@ -30,17 +31,20 @@ export function Navbar() {
         spacing={4}
       >
         {currentUser ? (
-          <Navlink to="/profile" name="DGM YOUTH" size="lg" />
+          <Navlink to="/profile" color="white" name="DGM YOUTH" size="lg" />
         ) : (
-          <Navlink color="purple" to="/" name="DGM YOUTH" size="lg" />
+          <Navlink color="white" to="/" name="DGM YOUTH" size="lg" />
         )}
 
         <Spacer />
-        {!currentUser && <Navlink to="/login" name="Login" />}
-        {!currentUser && <Navlink to="/register" name="Register" />}
-        {currentUser && <Navlink to="/profile" name="Profile" />}
+        {!currentUser && <Navlink color="white" to="/login" name="Login" />}
+        {!currentUser && (
+          <Navlink color="white" to="/register" name="Register" />
+        )}
+        {currentUser && <Navlink color="white" to="/profile" name="Profile" />}
         {currentUser && (
           <Navlink
+            color="white"
             to="/logout"
             name="Logout"
             onClick={async (e) => {
@@ -49,12 +53,13 @@ export function Navbar() {
             }}
           />
         )}
-        <IconButton
+     {/*    <IconButton
+          color="white"
           variant="ghost"
           icon={useColorModeValue(<FaSun />, <FaMoon />)}
           onClick={toggleColorMode}
           aria-label="toggle-dark-mode"
-        />
+        /> */}
       </HStack>
     </Box>
   );
