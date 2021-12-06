@@ -15,6 +15,8 @@ import Profilepage from '../pages/Profilepage'
 import Registerpage from '../pages/Registerpage'
 import ResetPasswordPage from '../pages/ResetPasswordPage'
 import TestPage from '../pages/TestPage'
+import Dashboardpage from '../pages/Dashboardpage'
+import ProfileDetailspage from '../pages/ProfileDetailspage'
 
 export default function AppRouter(props) {
   return (
@@ -25,7 +27,9 @@ export default function AppRouter(props) {
           <ProtectedRoute exact path='/login' component={Loginpage} />
           <ProtectedRoute exact path='/register' component={Registerpage} />
           <ProtectedRoute exact path='/profile' component={Profilepage} />
-          <ProtectedRoute exact path='/test' component={TestPage} />
+          <ProtectedRoute exact path='/dashboard' component={Dashboardpage} />
+          <ProtectedRoute exact path='/dashboard' component={Dashboardpage} />
+          <ProtectedRoute exact path='/profile-details/:id' component={ProfileDetailspage} />
           <ProtectedRoute
             exact
             path='/forgot-password'
@@ -58,7 +62,7 @@ function ProtectedRoute(props) {
     path === '/reset-password'
   ) {
     return currentUser ? (
-      <Redirect to={location.state?.from ?? '/profile'} />
+      <Redirect to={location.state?.from ?? '/dashboard'} />
     ) : (
       <Route {...props} />
     )

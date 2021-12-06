@@ -35,7 +35,7 @@ export default function Registerpage() {
 
   return (
     <Layout>
-      <Heading textAlign='center' my={12}>
+      <Heading color="purple" pt={20} textAlign='center' my={12}>
         Register
       </Heading>
       <Card maxW='md' mx='auto' mt={4}>

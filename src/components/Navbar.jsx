@@ -23,6 +23,13 @@ export function Navbar() {
       borderBottomColor={useColorModeValue("gray.100", "gray.700")}
       mb={4}
       py={4}
+      style={{
+        position: "fixed",
+        top: 0,
+        width: "100%",
+        marginBottom: "100px",
+        zIndex: "1000",
+      }}
     >
       <HStack
         justifyContent="flex-end"
@@ -31,19 +38,19 @@ export function Navbar() {
         spacing={4}
       >
         {currentUser ? (
-          <Navlink to="/profile" color="white" name="DGM YOUTH" size="lg" />
+          <Navlink to="/dashboard" color="white" ml={5} name="DGM YOUTH" size="lg" />
         ) : (
-          <Navlink color="white" to="/" name="DGM YOUTH" size="lg" />
+          <Navlink color="white" to="/" ml={5} name="DGM YOUTH" size="lg" />
         )}
 
         <Spacer />
-        {!currentUser && <Navlink color="white" to="/login" name="Login" />}
+        {!currentUser && <Navlink  ml={5} color="white" to="/login" name="Login" />}
         {!currentUser && (
-          <Navlink color="white" to="/register" name="Register" />
+          <Navlink  ml={5} color="white" to="/register" name="Register" />
         )}
-        {currentUser && <Navlink color="white" to="/profile" name="Profile" />}
+        {currentUser && <Navlink  ml={5} color="white" to="/profile" name="Profile" />}
         {currentUser && (
-          <Navlink
+          <Navlink  ml={5}
             color="white"
             to="/logout"
             name="Logout"
@@ -53,7 +60,7 @@ export function Navbar() {
             }}
           />
         )}
-     {/*    <IconButton
+        {/*    <IconButton
           color="white"
           variant="ghost"
           icon={useColorModeValue(<FaSun />, <FaMoon />)}

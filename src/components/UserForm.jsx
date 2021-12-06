@@ -22,8 +22,13 @@ import {
 import { CloseIcon, RepeatIcon, AddIcon } from "@chakra-ui/icons";
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "../utils/init-firebase";
-import { useSelector } from "react-redux";
 import { FaSave } from "react-icons/fa";
+import { useSelector, useDispatch } from "react-redux";
+import {
+
+  getAllUsers,
+
+} from "../services/redux/reducers/UsersSlice";
 
 function UserForm() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -40,7 +45,8 @@ function UserForm() {
 
   const { userId } = useSelector((state) => state.users);
   const userCollection = collection(db, "users");
-
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const dispatch = useDispatch();
   const resetData = () => {
     setfirstName("");
     setlastName("");
@@ -53,6 +59,7 @@ function UserForm() {
   };
 
   const createUser = async () => {
+    setIsSubmitting(true)
     await addDoc(userCollection, {
       userId: userId,
       firstName: firstName,
@@ -64,7 +71,9 @@ function UserForm() {
       sex: sexvalue,
       role: rolevalue,
     });
+    setIsSubmitting(false)
     resetData();
+    onClose()
   };
 
   return (
@@ -223,10 +232,13 @@ function UserForm() {
                 onClick={createUser}
                 colorScheme="purple"
                 mr={3}
+                w="23"
                 type="submit"
+                isLoading={isSubmitting}
               >
                 <FaSave color="white" />
                 <Text ml={1}>Save</Text>
+               
               </Button>
               <Button
                 onClick={resetData}

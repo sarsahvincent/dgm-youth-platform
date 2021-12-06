@@ -45,7 +45,7 @@ export default function Loginpage() {
 
   function handleRedirectToOrBack() {
     // console.log(location?.state)
-    history.replace(location.state?.from ?? '/profile')
+    history.replace(location.state?.from ?? '/dashboard')
     // if (location.state) {
     //   history.replace(location.state?.from)
     // } else {
@@ -55,7 +55,7 @@ export default function Loginpage() {
 
   return (
     <Layout>
-      <Heading textAlign='center' my={12}>
+      <Heading textAlign='center' color="purple" pt={20} my={12}>
         Login
       </Heading>
       <Card maxW='md' mx='auto' mt={4}>

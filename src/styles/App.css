@@ -1,0 +1,106 @@
+.dasboard__profile__image {
+  width: 90px;
+  height: 90px;
+  align-items: center;
+  border-radius: 100px;
+  border: 5px solid rgba(128, 0, 128, 0.479);
+  background-color: rgba(221, 203, 197, 0.548);
+}
+
+.dasboard__profile__header__image {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  border: 2px solid rgba(128, 0, 128, 0.479);
+  background-color: rgba(228, 70, 18, 0.548);
+}
+
+.dasboard__profile__name {
+  display: flex;
+}
+
+.dasboard__profile__names {
+  margin-top: 10px;
+  letter-spacing: 1px;
+}
+.dasboard__profile__names h3 {
+  font-weight: 700;
+  color: rgb(182, 12, 12);
+  font-style: normal;
+  font-family: "Segoe UI";
+}
+.dasboard__profile__name span {
+  margin-left: 20px;
+  color: rgb(128, 9, 128);
+  font-weight: 700;
+}
+
+.dasboard__profile__description {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+.dasboard__profile__description p {
+  font-size: 1.1em;
+  color: rgb(182, 12, 12);
+  font-weight: 600;
+}
+.dasboard__profile__description p span {
+  color: rgb(128, 9, 128);
+  font-weight: 600;
+}
+
+.dasboard__profile__container {
+  margin: 5px;
+}
+
+.dasboard__header__btn__total {
+  display: flex;
+  justify-content: space-between;
+}
+
+.profile__details__small_image{
+  width: 50px;
+  height: 50px;
+  align-items: center;
+  border-radius: 100px;
+  border: 2px solid rgba(128, 0, 128, 0.479);
+  background-color: rgba(221, 203, 197, 0.548);
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+
+@media (max-width: 575.98px) {
+  .dasboard__profile__description p span {
+    margin-left: 10px;
+  }
+  .dasboard__profile__container {
+    margin: 2px !important;
+  }
+  .dasboard__profile__desplay {
+    flex-direction: column;
+    margin: 2px;
+  }
+
+  .dasboard__header {
+    color: rgb(99, 6, 37);
+  }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 768px) {
+}
+
+/* Medium devices (tablets, 768px and up) */
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+}
+
+/* Large devices (desktops, 992px and up) */
+
+@media (min-width: 992px) and (max-width: 1366px) {
+}
+
+/* Extra large screens */
+@media (min-width: 1367px) {
+}
